@@ -1,0 +1,29 @@
+from turtle import *
+import colorsys
+
+# Initialize the hue variable for HSV to RGB conversion
+h = 0
+
+# Set the speed of the turtle
+speed(0)
+
+# Set the background color
+bgcolor("black")
+
+# Draw the pattern
+for i in range(16):
+    for j in range(18):
+        # Convert HSV to RGB
+        c = colorsys.hsv_to_rgb(h, 1, 1)
+        color(c)
+        h += 0.005  # Increment the hue value
+
+        rt(90)
+        # Draw a circular pattern with varying radii
+        circle(150 - j * 6, 90)
+        lt(90)
+        circle(150 - j * 6, 90)
+        lt(180)
+        circle(40, 24)
+
+done()
